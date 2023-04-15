@@ -5,10 +5,36 @@ class WatchingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Container(
-          height: 200,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        height: 195,
+        width: 160,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+        child: Stack(
+          children: [
+            Container(
+              height: 195,
+              width: 160,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: const DecorationImage(
+                      image: AssetImage("./images/main.jpg"),
+                      fit: BoxFit.cover)),
+            ),
+            Positioned(
+              left: 10,
+              top: 10,
+              child: Container(
+                height: 25,
+                width: 15,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("./images/n.png"),
+                        fit: BoxFit.cover)),
+              ),
+            ),
+          ],
         ),
       ),
     );
