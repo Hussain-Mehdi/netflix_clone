@@ -168,6 +168,35 @@ class UserHomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Positioned(
+                top: 380,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Exciting",
+                          style: TextStyle(
+                              fontFamily: 'sans',
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      Text("Reality TV",
+                          style: TextStyle(
+                              fontFamily: 'sans',
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      Text("Competition",
+                          style: TextStyle(
+                              fontFamily: 'sans',
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
           Padding(
