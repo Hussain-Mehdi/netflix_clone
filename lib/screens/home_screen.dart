@@ -1,12 +1,27 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:netflix_clone/model/film_model.dart';
+import '../controller/jsonfile_reader.dart';
 import '../widgets/bottom_navigationbar.dart';
 import '../widgets/watching_card.dart';
 
-class UserHomeScreen extends StatelessWidget {
-  const UserHomeScreen({super.key});
+class UserHomeScreen extends StatefulWidget {
+  @override
+  State<UserHomeScreen> createState() => _UserHomeScreenState();
+}
+
+class _UserHomeScreenState extends State<UserHomeScreen> {
+  JsonFileHelper jsonReader = JsonFileHelper();
+
+  @override
+  void initState() {
+    jsonReader.getFilmDetail().then((value) => reload());
+    super.initState();
+  }
+
+  reload() {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +51,8 @@ class UserHomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage("./images/main.jpg"))),
+                        image: CachedNetworkImageProvider(
+                            filmList[1].imagesFilm[0]))),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10.0, right: 10),
@@ -222,8 +238,8 @@ class UserHomeScreen extends StatelessWidget {
   List<Widget> createWatchingCards() {
     List<Widget> watchingCards = [];
     int i = 0;
-    while (i <= 5) {
-      watchingCards.add(WatchingCard());
+    while (i <= 10) {
+      watchingCards.add(WatchingCard(filmList[i].imagesFilm[1]));
       i++;
     }
     return watchingCards;

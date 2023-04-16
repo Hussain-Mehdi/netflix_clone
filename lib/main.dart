@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/screens/splash_screen.dart';
 import 'screens/search_film.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Netflix',
-      home: UserListView(),
+      home: SplashScreen(),
     );
   }
 }

@@ -19,7 +19,7 @@ class _UserListViewState extends State<UserListView> {
   int selectedIndex = 0;
   TextEditingController username = TextEditingController();
   List<String> searchFilm = [];
-  Future recievedData = Future(() => null);
+
   @override
   void initState() {
     jsonReader.getFilmDetail().then((value) => reload());

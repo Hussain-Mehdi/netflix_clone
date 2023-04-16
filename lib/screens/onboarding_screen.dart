@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/screens/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -77,19 +78,28 @@ class OnboardingScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 44,
-                  decoration: BoxDecoration(
-                      color: Color(0xffD22F26),
-                      borderRadius: BorderRadius.circular(2)),
-                  child: Center(
-                    child: Text(
-                      "Get Started",
-                      style: TextStyle(
-                          color: Color(0xffE6E6E6),
-                          fontSize: 14,
-                          fontFamily: 'sans',
-                          fontWeight: FontWeight.w600),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UserHomeScreen(),
+                        ));
+                  },
+                  child: Ink(
+                    height: 44,
+                    decoration: BoxDecoration(
+                        color: Color(0xffD22F26),
+                        borderRadius: BorderRadius.circular(2)),
+                    child: Center(
+                      child: Text(
+                        "Get Started",
+                        style: TextStyle(
+                            color: Color(0xffE6E6E6),
+                            fontSize: 14,
+                            fontFamily: 'sans',
+                            fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ),
                 ),

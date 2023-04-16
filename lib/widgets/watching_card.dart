@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class WatchingCard extends StatelessWidget {
-  const WatchingCard({super.key});
+  String imageLink;
+  WatchingCard(this.imageLink);
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +20,13 @@ class WatchingCard extends StatelessWidget {
               width: 160,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  image: const DecorationImage(
-                      image: AssetImage("./images/main.jpg"),
+                  image: DecorationImage(
+                      image: CachedNetworkImageProvider(imageLink),
                       fit: BoxFit.cover)),
             ),
             Positioned(
-              left: 10,
-              top: 10,
+              left: 5,
+              top: 5,
               child: Container(
                 height: 25,
                 width: 15,
