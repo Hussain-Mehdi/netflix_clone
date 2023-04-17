@@ -36,16 +36,16 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.only(top: 50),
+                margin: const EdgeInsets.only(top: 50),
                 height: 430,
-                foregroundDecoration: BoxDecoration(
+                foregroundDecoration: const BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
                       Color.fromARGB(255, 0, 0, 0),
-                      const Color(0x00000000),
-                      const Color(0x00000000),
+                      Color(0x00000000),
+                      Color(0x00000000),
                       Color.fromARGB(230, 0, 0, 0),
                     ])),
                 decoration: BoxDecoration(
@@ -70,12 +70,12 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                       children: [
                         IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.cast_rounded,
                               color: Colors.white,
                               size: 22,
                             )),
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius: 16,
                           backgroundColor: Colors.white,
                           child: CircleAvatar(
@@ -90,12 +90,12 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
               ),
               Positioned(
                 top: 70,
-                child: Container(
+                child: SizedBox(
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                    children: const [
                       Text(
                         "TV Shows",
                         style: TextStyle(
@@ -126,13 +126,13 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
               ),
               Positioned(
                 top: 420,
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Column(
-                        children: [
+                        children: const [
                           Icon(
                             Icons.add_rounded,
                             color: Colors.white,
@@ -153,7 +153,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                             borderRadius: BorderRadius.circular(5)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
+                          children: const [
                             Icon(
                               Icons.play_arrow,
                             ),
@@ -167,7 +167,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                         ),
                       ),
                       Column(
-                        children: [
+                        children: const [
                           Icon(
                             Icons.info_rounded,
                             color: Colors.white,
@@ -190,7 +190,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                   width: MediaQuery.of(context).size.width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                    children: const [
                       Text("Exciting",
                           style: TextStyle(
                               fontFamily: 'sans',
@@ -215,8 +215,8 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
               )
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 18.0),
+          const Padding(
+            padding: EdgeInsets.only(left: 18.0),
             child: Text("Continue watching for Ellie",
                 style: TextStyle(
                     fontFamily: 'sans',
