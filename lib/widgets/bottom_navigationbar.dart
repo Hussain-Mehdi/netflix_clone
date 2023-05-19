@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/search_film.dart';
+
 class MyBottomNavigationBar extends StatefulWidget {
   @override
   State<MyBottomNavigationBar> createState() => _MyBottomNavigationBarState();
@@ -66,6 +68,11 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                     onTap: () {
                       previous = 85;
                       positionTheBox(167);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => UserListView(),
+                          ));
                     },
                     child: const Icon(
                       Icons.search_rounded,

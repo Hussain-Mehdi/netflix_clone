@@ -23,6 +23,7 @@ class _UserListViewState extends State<UserListView> {
   @override
   void initState() {
     jsonReader.getFilmDetail().then((value) => reload());
+
     super.initState();
   }
 
@@ -30,19 +31,22 @@ class _UserListViewState extends State<UserListView> {
     setState(() {});
   }
 
-  // searchUser(String username) {
-  //   setState(() {
-  //     searchFilm = filmList
-  //         .where((element) =>
-  //             element.titleFilm.toLowerCase().contains(username.toLowerCase()))
-  //         .toList();
-  //   });
-  // }
+  searchUser(String username) {
+    print("===========inside search method");
+    setState(() {
+      searchFilm = filmList
+          .where((element) =>
+              element.titleFilm.toLowerCase().contains(username.toLowerCase()))
+          .cast<String>()
+          .toList();
+      print("============Data found=============$username");
+    });
+  }
 
-  // loadData() {
-  //   searchFilm = List.from(filmList);
-  //   setState(() {});
-  // }
+  loadData() {
+    searchFilm = List.from(filmList);
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +94,7 @@ class _UserListViewState extends State<UserListView> {
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(5),
                     )),
-                //onChanged: (value) => searchUser(value.toString()),
+                onChanged: (value) => searchUser(value.toString()),
               ),
             ),
           ),
