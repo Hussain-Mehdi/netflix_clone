@@ -14,6 +14,9 @@ This project is a replica of the Netflix user interface, developed using Flutter
 - **Flutter**: Cross-platform framework for building mobile applications.
 - **Dart**: Programming language used for Flutter app development.
 
+## Screenshots
+
+
 <p> 
   <img src="images/splashscreen.png" width="270" >
   <img src="images/onboarding.png" width="270">
